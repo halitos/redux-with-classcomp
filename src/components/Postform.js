@@ -23,12 +23,16 @@ class Postform extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+
     const post = {
       title: this.state.title,
       body: this.state.body,
     };
 
     this.props.createPost(post);
+
+    e.target.body.value = "";
+    e.target.title.value = "";
   }
 
   render() {
